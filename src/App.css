@@ -1,0 +1,191 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2, #6b8dd6);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+  padding: 20px;
+}
+
+/* Animated Background */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+div {
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Todo Card */
+form,
+ol {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: 0.3s ease;
+}
+
+input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Add Button */
+form button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 94, 98, 0.4);
+}
+
+/* Todo List */
+ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 16px;
+  border-radius: 16px;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Buttons Container */
+li button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+li div {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  gap: 10px;
+  width: 135px;
+}
+
+/* Delete Button */
+li button:first-of-type {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+li button:first-of-type:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+/* Edit Button */
+li button:last-of-type {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+li button:last-of-type:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(91, 134, 229, 0.4);
+}
+
+/* Smooth Entry Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
